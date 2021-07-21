@@ -2,10 +2,6 @@
 
 This application takes a single integer input, compare it with NBA player heights information, and prints a list of all pairs of players whose height in inches adds up to the integer.
 
-## Requirements
-
-- requests
-
 ## Installation
 
 Install with:
