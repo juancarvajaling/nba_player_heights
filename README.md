@@ -32,10 +32,10 @@ Then, the application will display the list of pairs as follow:
 
 To run the tests, first install the requirements:
 ```bash
-pip install -r /path/to//nba_player_heights/requirements_test.txt
+pip install -r /path/to/nba_player_heights/requirements_test.txt
 ```
 
 Next:
 ```bash
-pytest /path/to//nba_player_heights/tests
+pytest /path/to/nba_player_heights/tests
 ```
