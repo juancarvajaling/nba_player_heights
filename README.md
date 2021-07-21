@@ -18,7 +18,7 @@ pip install -r /path/to/nba_player_heights/requirements.txt
 `search` module need to be called with a height in inches as argument, for example:
 
 ```bash
-python /path/to/nba_player_heights/player_heigths/search 139
+python /path/to/nba_player_heights/player_heigths/search.py 139
 ```
 
 Then, the application will display the list of pairs as follow:
@@ -37,5 +37,5 @@ pip install -r /path/to/nba_player_heights/requirements_test.txt
 
 Next:
 ```bash
-pytest /path/to/nba_player_heights/tests
+pytest /path/to/nba_player_heights/tests.py
 ```
