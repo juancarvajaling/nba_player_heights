@@ -1,4 +1,5 @@
 from sys import argv
+from itertools import combinations
 
 from raw_data import HTTPGetter
 
@@ -14,15 +15,13 @@ def search_player_pairs(input_height: int) -> str:
         return 'An error accurred fetching NBA player information.'
 
     output = ''
-    # Every player i in the list is compared with every player j, where j > i.
-    # So, for a list with length n, i goes to n - 2.
-    for idx_i, player_i in enumerate(data[:-1]):
-        for player_j in data[idx_i+1:]:
-            sum_heights = int(player_i['h_in']) + int(player_j['h_in'])
-            if sum_heights == input_height:
-                name_i = f'{player_i["first_name"]} {player_i["last_name"]}'
-                name_j = f'{player_j["first_name"]} {player_j["last_name"]}'
-                output += f'- {name_i:25}{name_j}\n'
+    # Loop for every pair of players
+    for pair in combinations(data, 2):
+        sum_heights = int(pair[0]['h_in']) + int(pair[1]['h_in'])
+        if sum_heights == input_height:
+            name_i = f'{pair[0]["first_name"]} {pair[0]["last_name"]}'
+            name_j = f'{pair[1]["first_name"]} {pair[1]["last_name"]}'
+            output += f'- {name_i:25}{name_j}\n'
 
     if not output:
         output = 'No matches found'
